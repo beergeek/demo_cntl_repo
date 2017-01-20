@@ -1,0 +1,9 @@
+---
+:backends:
+  - yaml
+:hierarchy:
+  - "%{::trusted.certname}"
+  - common
+
+:yaml:
+  :datadir: hieradata
