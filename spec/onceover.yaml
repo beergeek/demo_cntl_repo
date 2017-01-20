@@ -7,15 +7,13 @@ classes:
   - role::mom_server
   - role::monitor_server
   - role::replica
-  - role::repo_server
-  - role::web_db_server
   - role::web_server
 
 # Nodes to tests classes on, this refers to a 'factset' or 'nodeset'
 # depending on weather you are running 'spec' or 'acceptance' tests
 nodes:
   - CentOS-6.6-64
-  - CentOS-7.0-64
+#  - CentOS-7.0-64
 
 # You can group classes here to save typing
 #class_groups:
@@ -30,3 +28,9 @@ test_matrix:
   - all_nodes:
       classes: 'all_classes'
       tests: 'spec'
+
+functions:
+  puppetdb_query:
+    type: rvalue
+    returns:
+      - 'count': '1'
