@@ -13,7 +13,7 @@ classes:
 # depending on weather you are running 'spec' or 'acceptance' tests
 nodes:
   - CentOS-6.6-64
-#  - CentOS-7.0-64
+  - CentOS-7.0-64
 
 # You can group classes here to save typing
 #class_groups:
