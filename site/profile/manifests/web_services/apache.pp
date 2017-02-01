@@ -1,7 +1,7 @@
 class profile::web_services::apache {
 
-  $website_hash 	    = hiera('profile::web_services::apache::website_hash',undef)
-  $website_defaults 	= hiera('profile::web_services::apache::website_defaults')
+  $website_hash       = hiera('profile::web_services::apache::website_hash',undef)
+  $website_defaults   = hiera('profile::web_services::apache::website_defaults')
   $enable_firewall    = hiera('profile::web_services::apache::enable_firewall')
   $lb                 = hiera('profile::web_services::apache::lb',true)
   $export_host        = hiera('profile::web_services::apache::export_host',false)
@@ -14,7 +14,7 @@ class profile::web_services::apache {
   if $website_hash {
     $website_hash.each |String $site_name, Hash $website| {
       if $website['database_search'] {
-        $search_results = puppetdb_query("resources[count()] {type = \"Mysql_database\" and title = \"${website['database_search']}\"}")[0]['count'] 
+        $search_results = puppetdb_query("resources[count()] {type = \"Mysql_database\" and title = \"${website['database_search']}\"}")[0]['count']
       } else {
         $_bypass = true
       }
