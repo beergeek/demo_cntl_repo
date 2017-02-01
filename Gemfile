@@ -9,5 +9,5 @@ group :test do
   gem "metadata-json-lint"
   gem "simplecov"
   gem "simplecov-console"
-  gem "onceover"
+  gem "onceover", :git =>  'https://github.com/beergeek/onceover.git', :branch => 'shared_examples'
 end
