@@ -12,7 +12,6 @@ class profile::base {
     'linux': {
       $sysctl_settings  = hiera('profile::base::sysctl_settings')
       $sysctl_defaults  = hiera('profile::base::sysctl_defaults')
-      $mco_client_array = hiera_array('profile::base::mco_client_array', undef)
       $enable_firewall  = hiera('profile::base::enable_firewall',true)
 
       Firewall {
@@ -73,20 +72,6 @@ class profile::base {
 
       # manage DNS stuff
       class { 'profile::dns': }
-
-      if $mco_client_array {
-        $mco_client_array.each |$cert_title| {
-          file { $cert_title:
-            ensure  => file,
-            path    => "/etc/puppetlabs/mcollective/ssl/clients/${cert_title}-public.pem",
-            owner   => 'root',
-            group   => 'root',
-            mode    => '0440',
-            content => file("${::settings::ssldir}/public_keys/${cert_title}.pem",'/dev/null'),
-            notify  => Service['mcollective'],
-          }
-        }
-      }
 
       exec { 'update mco facts':
         command => '/opt/puppetlabs/puppet/bin/refresh-mcollective-metadata >>/var/log/puppetlabs/mcollective-metadata-cron.log 2>&1',
