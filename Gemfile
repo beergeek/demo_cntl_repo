@@ -7,6 +7,7 @@ group :test do
   gem "rspec-puppet", :git => 'https://github.com/rodjek/rspec-puppet.git'
   gem "puppetlabs_spec_helper"
   gem "onceover", :git =>  'https://github.com/beergeek/onceover.git', :branch => 'shared_examples'
+  gem "xmlrpc"
 end
 
 group :pre do
