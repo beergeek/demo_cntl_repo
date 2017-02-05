@@ -21,6 +21,7 @@ class profile::base {
 
       if $enable_firewall {
         class { 'firewall':
+          ensure => running,
         }
         class {['profile::fw::pre','profile::fw::post']:
         }
@@ -53,25 +54,25 @@ class profile::base {
       }
 
       # repo management
-      class { 'profile::repos': }
+      include profile::repos
 
       # monitoring
-      class { 'profile::monitoring': }
+      include profile::monitoring
 
       # manage time, timezones, and locale
-      class { 'profile::time_locale': }
+      include profile::time_locale
 
       # manage SSH
-      class { 'profile::ssh': }
+      include profile::ssh
 
       # manage SUDO
-      class { 'profile::sudo': }
+      include profile::sudo
 
       # manage logging
       #class { 'profile::logging': }
 
       # manage DNS stuff
-      class { 'profile::dns': }
+      include profile::dns
 
       exec { 'update mco facts':
         command => '/opt/puppetlabs/puppet/bin/refresh-mcollective-metadata >>/var/log/puppetlabs/mcollective-metadata-cron.log 2>&1',

@@ -36,7 +36,7 @@ profile::dns::purge: false
 
 # SSH
 profile::ssh::enable_firewall: *enable_firewall
-profile::ssh::banner_content: "This system is the property of Puppet Labs. Unauthorised access is not permitted"
+profile::ssh::banner_content: "This system is the property of Puppet. Unauthorised access is not permitted"
 profile::ssh::allowed_groups:
   - 'root'
   - 'vagrant'
@@ -58,7 +58,7 @@ profile::ssh::options_hash:
 profile::sudo::sudo_hash:
   ubuntu:
     priority: 10
-    content: 'ubuntu ALL=(ALL) NOPASSWD: ALL'
+    content: '%ubuntu ALL=(ALL) NOPASSWD: ALL'
   centos:
     priority: 10
     content: '%centos ALL=(ALL) NOPASSWD: ALL'
