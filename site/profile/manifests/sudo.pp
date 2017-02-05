@@ -28,11 +28,11 @@
 #
 class profile::sudo {
 
-  Hash $sudo_hash            = hiera_hash('profile::sudo::sudo_hash')
-  Hash $sudo_hash_defaults   = hiera('profile::sudo::sudo_hash_defaults')
-  Bool $sudo_purge           = hiera('profile::sudo::sudo_purge')
-  Bool $sudo_replace_config  = hiera('profile::sudo::sudo_replace_config')
-  Bool $noop_scope           = hiera('profile::sudo::noop_scope', false)
+  $sudo_hash            = hiera_hash('profile::sudo::sudo_hash')
+  $sudo_hash_defaults   = hiera('profile::sudo::sudo_hash_defaults')
+  $sudo_purge           = hiera('profile::sudo::sudo_purge')
+  $sudo_replace_config  = hiera('profile::sudo::sudo_replace_config')
+  $noop_scope           = hiera('profile::sudo::noop_scope', false)
 
   if $::brownfields and $noop_scope {
     noop()

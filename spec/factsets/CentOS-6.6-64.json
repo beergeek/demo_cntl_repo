@@ -52,7 +52,7 @@
         "uuid": "718B5270-6BF1-4AD4-8238-2E800FB589DD"
       }
     },
-    "domain": "inf.puppet.vm",
+    "domain": "puppet.vm",
     "env_temp_variable": "\\tmp",
     "facterversion": "3.5.0",
     "filesystems": "ext4,iso9660",

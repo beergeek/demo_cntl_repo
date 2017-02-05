@@ -28,11 +28,11 @@
 #
 class profile::ssh {
 
-  Array[String]$allowed_groups  = hiera_array('profile::ssh::allowed_groups')
-  String $banner_content        = hiera('profile::ssh::banner_content')
-  Bool $enable_firewall         = hiera('profile::ssh::enable_firewall')
-  Hash $options_hash            = hiera_hash('profile::ssh::options_hash')
-  Bool $noop_scope              = hiera('profile::ssh::noop_scope', false)
+  $allowed_groups  = hiera_array('profile::ssh::allowed_groups')
+  $banner_content        = hiera('profile::ssh::banner_content')
+  $enable_firewall         = hiera('profile::ssh::enable_firewall')
+  $options_hash            = hiera_hash('profile::ssh::options_hash')
+  $noop_scope              = hiera('profile::ssh::noop_scope', false)
 
   if $::brownfields and $noop_scope {
     noop()

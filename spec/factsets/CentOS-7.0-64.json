@@ -43,7 +43,7 @@
         "uuid": "D5B9F0EC-4BF4-3A44-BB08-45BF5DDF52B5"
       }
     },
-    "domain": "localdomain",
+    "domain": "puppet.vm",
     "ec2_metadata": {
       "ami-id": "ami-00000007",
       "ami-launch-index": "0",
