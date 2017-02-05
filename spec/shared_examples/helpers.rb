@@ -114,4 +114,5 @@ shared_examples_for 'test_linux' do |fact_set|
         'content'   => '%vagrant ALL=(ALL) NOPASSWD: ALL',
       })
     end
+  end
 end
