@@ -2,46 +2,46 @@ require 'spec_helper'
 
 shared_examples_for 'test_linux' do |fact_set|
   describe "Security Checks" do
-    it { is_expected.to satisfy_file_resource_requirements }
+    it { expect(catalogue).to satisfy_file_resource_requirements }
   end
 
   describe "SOE Checks" do
     it do
-      is_expected.to contain_class('firewall').with({
+      expect(catalogue).to contain_class('firewall').with({
         'ensure' => 'running',
       })
     end
 
     it do
-      is_expected.to contain_class('profile::firewall::pre')
+      expect(catalogue).to contain_class('profile::firewall::pre')
     end
 
     it do
-      is_expected.to contain_class('profile::firewall::post')
+      expect(catalogue).to contain_class('profile::firewall::post')
     end
 
     it do
-      is_expected.to contain_class('profile::ssh')
+      expect(catalogue).to contain_class('profile::ssh')
     end
 
     it do
-      is_expected.to contain_class('profile::sudo')
+      expect(catalogue).to contain_class('profile::sudo')
     end
 
     it do
-      is_expected.to contain_class('profile::monitoring')
+      expect(catalogue).to contain_class('profile::monitoring')
     end
 
     it do
-      is_expected.to contain_class('profile::repos')
+      expect(catalogue).to contain_class('profile::repos')
     end
 
     it do
-      is_expected.to contain_class('profile::dns')
+      expect(catalogue).to contain_class('profile::dns')
     end
 
     it do
-      is_expected.to contain_firewall('100 allow ssh access').with({
+      expect(catalogue).to contain_firewall('100 allow ssh access').with({
         'dport'  => '22',
         'proto'  => 'tcp',
         'action' => 'accept',
@@ -49,7 +49,7 @@ shared_examples_for 'test_linux' do |fact_set|
     end
 
     it do
-      is_expected.to contain_file('/etc/issue').with({
+      expect(catalogue).to contain_file('/etc/issue').with({
         'ensure'  => 'file',
         'owner'   => 'root',
         'group'   => 'root',
@@ -59,7 +59,7 @@ shared_examples_for 'test_linux' do |fact_set|
     end
 
     it do
-      is_expected.to contain_file('/etc/issue.net').with({
+      expect(catalogue).to contain_file('/etc/issue.net').with({
         'ensure'  => 'file',
         'owner'   => 'root',
         'group'   => 'root',
@@ -69,7 +69,7 @@ shared_examples_for 'test_linux' do |fact_set|
     end
 
     it do
-      is_expected.to contain_class('ssh').with({
+      expect(catalogue).to contain_class('ssh').with({
         'storeconfigs_enabled' => false,
         'options'              => {
           'Port'                            => '22',
@@ -88,28 +88,28 @@ shared_examples_for 'test_linux' do |fact_set|
     end
 
     it do
-      is_expected.to contain_class('sudo').with({
+      expect(catalogue).to contain_class('sudo').with({
         'purge'               => false,
         'config_file_replace' => true,
       })
     end
 
     it do
-      is_expected.to contain_sudo__conf('centos').with({
+      expect(catalogue).to contain_sudo__conf('centos').with({
         'priority'  => '10',
         'content'   => '%centos ALL=(ALL) NOPASSWD: ALL',
       })
     end
 
     it do
-      is_expected.to contain_sudo('ubuntu').with({
+      expect(catalogue).to contain_sudo('ubuntu').with({
         'priority'  => '10',
         'content'   => '%ubuntu ALL=(ALL) NOPASSWD: ALL',
       })
     end
 
     it do
-      is_expected.to contain_sudo('vagrant').with({
+      expect(catalogue).to contain_sudo('vagrant').with({
         'priority'  => '10',
         'content'   => '%vagrant ALL=(ALL) NOPASSWD: ALL',
       })
