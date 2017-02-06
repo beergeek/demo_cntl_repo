@@ -2,7 +2,7 @@ forge "http://forgeapi.puppetlabs.com"
 
 # Modules from the Puppet Forge
 mod "app_update",
-  :git => 'http://root@10.20.1.125:7990/scm/pup/app_update.git'
+  :git => 'http://10.20.1.125:7990/scm/pup/app_update.git'
 mod "windows_path",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-windows-path.git',
   :tag => "0.1.1"
