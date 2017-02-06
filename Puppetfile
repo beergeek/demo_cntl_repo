@@ -102,7 +102,7 @@ mod "resolv_conf",
   :tag => "v3.1.0"
 mod "rsyslog",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-rsyslog.git',
-  :tag => "3.5.1"
+  :tag => "v5.0.0"
 mod "ssh",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-ssh.git',
   :tag => "v3.0.1"
