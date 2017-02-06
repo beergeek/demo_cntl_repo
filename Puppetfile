@@ -118,7 +118,7 @@ mod "epel",
 mod "noop",
   :git => 'http://10.20.1.125:7990/scm/extpup/trlinkin-noop.git',
   :tag => "0.0.2"
-mod "sqlserver":
+mod "sqlserver",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-sqlserver.git',
   :tag => '1.1.4'
 mod "beergeek/iis",
