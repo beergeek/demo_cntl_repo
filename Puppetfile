@@ -131,4 +131,4 @@ mod 'make_noop',
   :git => 'http://10.20.1.125:7990/scm/extpup/beergeek-make_noop.git',
   :tag => '0.2.1'
 mod 'facecount',
-  :git => 'http://10.20.1.125:7990/scm/extpup/beergeek-facecount.git',
+  :git => 'http://10.20.1.125:7990/scm/extpup/beergeek-facecount.git'
