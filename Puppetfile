@@ -1,56 +1,134 @@
 forge "http://forgeapi.puppetlabs.com"
 
 # Modules from the Puppet Forge
-#mod "badgerious/windows_env"
-mod "basti1302/windows_path", "0.1.1"
-mod "puppetlabs/chocolatey"
-#mod "croddy/make", "0.0.5"
-mod "fiddyspence/sysctl", "1.1.0"
-mod "puppet/download_file"
-mod "puppet/windowsfeature"
-mod "puppet/windows_firewall"
-mod "puppetlabs/acl", "1.1.2"
-mod "puppetlabs/apache", "1.10.0"
-mod "puppetlabs/concat", "2.2.0"
-mod "puppetlabs/docker_platform"
-mod "puppetlabs/dsc", "1.2.0"
-mod "puppetlabs/firewall", "1.8.2"
-mod "puppetlabs/gcc", "0.3.0"
-mod "puppetlabs/git", "0.4.0"
-mod "puppetlabs/haproxy", "1.5.0"
-mod "puppetlabs/inifile", "1.5.0"
-mod "puppetlabs/mysql", "3.8.0"
-mod "puppetlabs/ntp", "4.2.0"
-mod "puppetlabs/pe_gem", "0.1.1"
-mod "puppetlabs/powershell", "2.1.0"
-mod "puppetlabs/puppetserver_gem","0.1.0"
-mod "puppetlabs/puppet_agent"
-mod "puppetlabs/reboot", "1.2.1"
-mod "puppetlabs/registry", "1.1.3"
-mod "puppetlabs/ruby", "0.4.0"
-mod "puppetlabs/stdlib", "4.12.0"
-mod "puppetlabs/tomcat", "1.5.0"
-mod "puppetlabs/vcsrepo", "1.3.2"
-mod "puppetlabs/wsus_client", "1.0.2"
-mod "reidmv/puppet_certificate"
-mod "rodjek/logrotate", "1.1.1"
-mod "saz/locales", "2.2.2"
-mod "saz/resolv_conf", "3.0.5"
-mod "saz/rsyslog", "3.5.1"
-mod "saz/ssh", "3.0.1"
-mod "saz/sudo", "3.1.0"
-mod "saz/timezone", "3.3.0"
-mod "stahnma/epel"
-mod "trlinkin/noop", "0.0.2"
-mod "puppetlabs/sqlserver"
-mod "beergeek/iis", "0.1.9"
-
+mod "windows_path",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-windows-path.git',
+  :tag => "0.1.1"
+mod "chocolatey",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-chocolatey.git',
+  :tag => '2.0.1'
+mod "sysctl",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-sysctl.git',
+  :tag => '1.1.0'
+mod "download_file",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-download_file.git',
+  :tag => 'v2.0.0'
+mod "windowsfeature",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-windowsfeature.git',
+  :tag => 'v2.0.0'
+mod "windows_firewall",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-windows_firewall.git',
+  :tag => 'v1.0.3'
+mod "acl",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-acl.git',
+  :tag => '1.1.2'
+mod "apache",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-apache.git',
+  :tag => '1.11.0'
+mod "concat",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-concat.git',
+  :tag => '2.2.0'
+mod "docker_platform",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-docker_platform.git',
+  :tag => '2.1.0'
+mod "dsc",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-dsc.git',
+  :tag => '1.2.0'
+mod "firewall",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-firewall.git',
+  :tag => '1.8.2'
+mod "gcc",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-gcc.git',
+  :tag => "0.3.0"
+mod "git",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-git.git',
+  :tag => "0.4.0"
+mod "haproxy",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-haproxy.git',
+  :tag => "1.5.0"
+mod "inifile",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-inifile',
+  :tag => "1.5.0"
+mod "mysql",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-mysql.git',
+  :tag => "3.8.0"
+mod "ntp",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-ntp.git',
+  :tag => "4.2.0"
+mod "pe_gem",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-pe_gem.git',
+  :tag => "0.1.1"
+mod "powershell",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-powershell.git',
+  :tag => "2.1.0"
+mod "puppetserver_gem",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-puppetserver_gem.git',
+  :tag => "0.1.0"
+mod "puppet_agent",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-puppet_agent.git',
+  :tag => '1.3.1'
+mod "reboot",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-reboot.git',
+  :tag => "1.2.1"
+mod "registry",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-registry.git',
+  :tag => "1.1.3"
+mod "ruby",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-ruby.git',
+  :tag => "0.4.0"
+mod "stdlib",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-stdlib.git',
+  :tag => "4.12.0"
+mod "tomcat",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-tomcat.git',
+  :tag => "1.5.0"
+mod "vcsrepo",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-vcsrepo.git',
+  :tag => "1.3.2"
+mod "wsus_client",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-wsus_client.git',
+  :tag => "1.0.2"
+mod "puppet_certificate",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-module-puppet_certificate.git',
+  :tag => '0.0.3'
+mod "logrotate",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-module-logrotate.git',
+  :tag => "1.1.1"
+mod "locales",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-locales.git',
+  :tag => "2.2.2"
+mod "resolv_conf",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-resolv_conf.git',
+  :tag => "3.0.5"
+mod "saz/rsyslog",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-rsyslog.git',
+  :tag => "3.5.1"
+mod "ssh",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-ssh.git',
+  :tag => "3.0.1"
+mod "sudo",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-sudo.git',
+  :tag => "3.1.0"
+mod "timezone",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-timezone.git',
+  :tag => "3.3.0"
+mod "epel",
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-module-epel.git',
+  :tag => '1.2.2'
+mod "noop",
+  :git => 'http://10.20.1.125:7990/scm/extpup/trlinkin-noop.git',
+  :tag => "0.0.2"
+mod "sqlserver":
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-sqlserver.git',
+  :tag => '1.1.4'
+mod "beergeek/iis",
+  :git => 'http://10.20.1.125:7990/scm/extpup/beergeek-iis.git',
+  :tag => "0.1.9"
 mod 'node_manager',
-  :git => 'https://github.com/puppetlabs/prosvcs-node_manager.git'
-mod 'app_update',
-  :git => 'https://github.com/beergeek/beergeek-app_update.git',
-  :branch => 'yum_demo'
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppetlabs-node_manager.git',
+  :tag => '0.3.1'
 mod 'make_noop',
-  :git => 'https://github.com/beergeek/make_noop.git'
+  :git => 'http://10.20.1.125:7990/scm/extpup/beergeek-make_noop.git',
+  :tag => '0.2.1'
 mod 'facecount',
-  :git => 'https://github.com/beergeek/facecount.git'
+  :git => 'http://10.20.1.125:7990/scm/extpup/beergeek-facecount.git',
