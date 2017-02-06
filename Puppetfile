@@ -92,26 +92,26 @@ mod "puppet_certificate",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-module-puppet_certificate.git',
   :tag => '0.0.3'
 mod "logrotate",
-  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-module-logrotate.git',
+  :git => 'http://10.20.1.125:7990/scm/extpup/puppet-logrotate.git',
   :tag => "1.1.1"
 mod "locales",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-locales.git',
-  :tag => "2.2.2"
+  :tag => "v2.3.0"
 mod "resolv_conf",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-resolv_conf.git',
-  :tag => "3.0.5"
-mod "saz/rsyslog",
+  :tag => "v3.1.0"
+mod "rsyslog",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-rsyslog.git',
   :tag => "3.5.1"
 mod "ssh",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-ssh.git',
-  :tag => "3.0.1"
+  :tag => "v3.0.1"
 mod "sudo",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-sudo.git',
-  :tag => "3.1.0"
+  :tag => "v4.1.0"
 mod "timezone",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-timezone.git',
-  :tag => "3.3.0"
+  :tag => "v3.4.0"
 mod "epel",
   :git => 'http://10.20.1.125:7990/scm/extpup/puppet-module-epel.git',
   :tag => '1.2.2'
