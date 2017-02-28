@@ -1,6 +1,7 @@
-class profile::base {
-
-  $noop_scope = hiera('profile::base::noop_scope', false)
+# Using automagic data lookups
+class profile::base (
+  $noop_scope = false,
+) {
 
   if $::brownfields and $noop_scope {
     noop(true)
@@ -23,8 +24,8 @@ class profile::base {
         class { 'firewall':
           ensure => running,
         }
-        class {['profile::fw::pre','profile::fw::post']:
-        }
+        include profile::fw::pre
+        include profile::fw::post
       } else {
         class { 'firewall':
           ensure => stopped,
@@ -69,7 +70,7 @@ class profile::base {
       include profile::sudo
 
       # manage logging
-      #class { 'profile::logging': }
+      #include profile::logging
 
       # manage DNS stuff
       include profile::dns
@@ -111,7 +112,7 @@ class profile::base {
       }
 
       # monitoring
-      class { 'profile::monitoring': }
+      include profile::monitoring
 
       file { ['C:/ProgramData/PuppetLabs/facter','C:/ProgramData/PuppetLabs/facter/facts.d']:
         ensure => directory,
