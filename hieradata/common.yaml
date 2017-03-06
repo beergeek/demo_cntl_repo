@@ -15,7 +15,30 @@ variables:
       datadir: "/etc/puppetlabs/code/environments/%{literal('%')}{environment}/hieradata"
   - &manage_heira true
   - &manage_eyaml false
-
+pe_r10k::sources:
+  'puppet':
+    'basedir': '/etc/puppetlabs/code/environments'
+    'remote': 'http://10.20.1.125:7990/scm/extpup/puppet_env.git'
+  'hk':
+    'basedir': '/etc/puppetlabs/code/environments'
+    'remote': 'http://10.20.1.125:7990/scm/extpup/control_repo_hk.git'
+    'prefix': true
+  'sin':
+    'basedir': '/etc/puppetlabs/code/environments'
+    'remote': 'http://10.20.1.125:7990/scm/extpup/control_repo_SIN.git'
+    'prefix': true
+puppet_enterprise::master::code_manager::sources:
+  'puppet':
+    'basedir': '/etc/puppetlabs/code/environments'
+    'remote': 'http://10.20.1.125:7990/scm/extpup/puppet_env.git'
+  'hk':
+    'basedir': '/etc/puppetlabs/code/environments'
+    'remote': 'http://10.20.1.125:7990/scm/extpup/control_repo_hk.git'
+    'prefix': true
+  'sin':
+    'basedir': '/etc/puppetlabs/code/environments'
+    'remote': 'http://10.20.1.125:7990/scm/extpup/control_repo_SIN.git'
+    'prefix': true
 profile::base::noop_scope: false
 profile::dns::noop_scope: false
 profile::fw::noop_scope: false
